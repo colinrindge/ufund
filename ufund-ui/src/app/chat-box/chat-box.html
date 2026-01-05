@@ -1,0 +1,39 @@
+<div class="chat-window">
+  <div class="personalities">
+    <label><b>Select your personality:</b></label>
+    <select [(ngModel)]="personalityType" (ngModelChange)="onSelect(personalityType)">
+      <option [ngValue]="null" id="default-personality" selected>Select a personality...</option>
+      <option
+        *ngFor="let personality of personalities"
+        class="personalities"
+        [ngValue]="personality"
+      >
+        {{ personality.name }}
+      </option>
+    </select>
+  </div>
+  <div class="chat-container">
+    <label *ngIf="personalityType != null" id="personality-status-label"
+      >You are currently chatting with {{ personalityType.name }}...</label
+    >
+    <button id="close-button" (click)="onClose()">X</button>
+    <div class="scrollable-list-container">
+      <div class="chats">
+        <div *ngFor="let chat of chats">
+          <markdown [data]="'**' + chat.username + '**: ' + chat.message" />
+        </div>
+      </div>
+    </div>
+    <div class="submission" *ngIf="personalityType != null">
+      <input
+        id="description"
+        type="text"
+        [(ngModel)]="responseChat.message"
+        (keydown.enter)="sendChat(responseChat.message)"
+      />
+      <button type="submit" (click)="sendChat(responseChat.message)" style="margin-left: 0.15rem">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

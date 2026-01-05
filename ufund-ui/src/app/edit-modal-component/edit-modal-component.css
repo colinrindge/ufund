@@ -1,0 +1,38 @@
+@font-face {
+  font-family: BeeFont; /* set name */
+  src: url('/bee_font.ttf'); /* url of the font */
+}
+
+dialog {
+  border-radius: 10px;
+  background-color: rgb(235, 235, 235);
+  min-width: 300px;
+  border: none;
+  box-sizing: border-box;
+  padding-bottom: 2rem;
+  transform: translateY(-50%);
+  background-color: #ffbf00;
+}
+
+.header-label {
+  color: black;
+  text-align: center;
+}
+
+.submit-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-60%);
+}
+
+label,
+input {
+  width: 100%;
+  margin-bottom: 0.03rem;
+  box-sizing: border-box;
+  display: block;
+}
+
+input:focus {
+  outline: 1px dotted rgb(255, 178, 178);
+}

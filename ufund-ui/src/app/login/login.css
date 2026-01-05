@@ -1,0 +1,102 @@
+@font-face {
+  font-family: BeeFont; /* set name */
+  src: url('/bee_font.ttf'); /* url of the font */
+}
+
+.full-login-box {
+  padding-top: 17.5em;
+}
+
+#login-box {
+  display: flex;
+  justify-content: center;
+  font-family: 'BeeFont', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
+    Arial, sans-serif;
+  anchor-name: --login-anchor;
+}
+
+.maxbox {
+  background-image: url(/background2.jpg);
+  height: 100vh;
+}
+
+#login-span {
+  background: linear-gradient(
+    0deg,
+    rgba(217, 124, 11, 1) 1%,
+    rgba(255, 185, 99, 1) 29%,
+    rgba(217, 124, 11, 1) 88%,
+    rgba(255, 182, 64, 1) 100%
+  );
+  padding: 0.35em;
+  margin-top: 0.5em;
+  border-radius: 0.5em;
+  font-family: 'BeeFont', 'Trebuchet MS';
+  text-align: center;
+}
+
+#login-span h2 {
+  min-width: 20vw;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 0.35em;
+}
+
+#login-span p {
+  margin: 0;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#login-span button {
+  padding: 0.25em;
+  font-size: 10pt;
+  border-radius: 0.5em;
+  font-family: 'BeeFont', 'Trebuchet MS';
+  background-color: orange;
+  justify-content: center;
+}
+
+#login-bypass h3 {
+  margin: 0;
+  margin-bottom: 0.25em;
+}
+
+#login-span input {
+  padding: 0.3em;
+  opacity: 95%;
+  font-family: 'BeeFont', 'Trebuchet MS';
+}
+#login-bypass {
+  position: absolute;
+  position-anchor: --login-anchor;
+  position-area: bottom center;
+  flex-flow: row wrap;
+  font-family: 'BeeFont', 'Trebuchet MS';
+  gap: 0.5em;
+  margin-top: 0.75em;
+}
+
+#login-bypass div {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 15em;
+  gap: 0;
+  justify-content: center;
+  font-family: 'BeeFont', 'Trebuchet MS';
+}
+.login_boxs {
+  display: flex;
+  flex-flow: column;
+  font-family: 'BeeFont', 'Trebuchet MS';
+  gap: 0.2rem;
+}
+
+#login-bypass div button {
+  padding: 0.25em;
+  font-size: 10pt;
+  margin-top: 0.25em;
+  background-color: orange;
+  border-radius: 0.5em;
+  font-family: BeeFont;
+}

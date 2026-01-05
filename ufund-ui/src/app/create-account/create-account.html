@@ -1,0 +1,32 @@
+<div class="maxbox">
+  <div id="create-user-container">
+    <span id="user-span">
+      <h3 style="margin: 1em; margin-bottom: 0">Thanks for your interest!</h3>
+      <h5 style="margin: 0.3em">We'll just need some information from you...</h5>
+      <span>
+        <label for="username"> Username: </label>
+        <input id="username" type="text" [(ngModel)]="createdUser.userName" />
+      </span>
+      <span>
+        <label for="create-user-password"> Password: </label>
+        <input id="create-user-password" type="password" [(ngModel)]="createdUser.password" />
+      </span>
+      <span id="error-box">
+        <input id="create-user-show-box" type="checkbox" value="show" (click)="onCheckboxClick()" />
+        <label for="create-user-show-box">Show password</label>
+        <span class="create-input">
+        <div>What is your date of birth?</div>
+        <input type="text" [(ngModel)]="answer1" />
+      </span>
+      <span class="create-input">
+        <div>What is your mother's maiden name?</div>
+        <input type="text" [(ngModel)]="answer2" />
+      </span>
+        <button id="login-return" (click)="onReturnClick()">Return to login page</button>
+        <button (click)="onSubmit()">Create Account</button>
+        <div id="error-text"></div>
+      </span>
+      
+    </span>
+  </div>
+</div>

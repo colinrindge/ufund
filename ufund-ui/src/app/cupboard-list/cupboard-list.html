@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="search-bar">
+  <input
+    class="search_input"
+    type="text"
+    placeholder="Search by name"
+    [(ngModel)]="searchTerm"
+    (keydown.enter)="getNeedbyName()"
+  />
+  <button class="seach_button" (click)="getNeedbyName()">Search</button>
+</div>
+<div *ngIf="currentUser.userName == 'Guest'" id="return-container">
+  <div id="return-box">
+    <h1 style="margin: 0">You aren't logged in!</h1>
+    <h3 style="margin: 0.25em">Let's fix that:</h3>
+    <button (click)="goToCreate()">Return to the login page</button>
+  </div>
+</div>
+<app-create-need *ngIf="currentUser.userName === 'admin'" [needs]="needs" />
+<div class="needs-menu">
+  <div *ngFor="let need of needs" class="need-item">
+    <div class="need-image-container">
+      <img src="/hexagonbee1.png" alt="Need item" class="need-image" />
+
+      <div class="need-info">
+        <h3>{{ need.name }}</h3>
+        <p><strong>Amount Recieved:</strong> {{ need.quantity }}</p>
+        <p><strong>Amount Needed:</strong> {{ need.cost }}</p>
+        <p><strong>Type:</strong> {{ need.type }}</p>
+        <p class="need-description">{{ need.description }}</p>
+        
+      </div>
+      <app-add-to-basket
+        *ngIf="currentUser.userName != 'Guest' && currentUser.userName != 'admin'"
+        class="add-to-basket"
+        [need]="need"
+      ></app-add-to-basket>
+    </div>
+
+    <div>
+      <app-admin-overlay
+        class="admin"
+        *ngIf="currentUser.userName === 'admin'"
+        [need]="need"
+        [needs]="needs"
+      ></app-admin-overlay>
+    </div>
+  </div>
+</div>

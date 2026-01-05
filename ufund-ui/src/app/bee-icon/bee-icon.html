@@ -1,0 +1,8 @@
+<button (click)="showChat = true" class="bee-icon" *ngIf="!showChat">
+  <img src="/beechat.svg" />
+</button>
+<app-chat-box
+  *ngIf="showChat"
+  [currentUser]="currentUser"
+  (closeEvent)="showChat = false"
+></app-chat-box>

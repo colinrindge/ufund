@@ -1,0 +1,120 @@
+dialog {
+  border-radius: 13px;
+  background-color: #9b4522;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  padding-bottom: 2rem;
+  z-index: 100;
+}
+
+.dialog-title {
+  background-color: #ffbf00;
+  border-radius: 10px;
+}
+
+.dialog-right {
+  float: right;
+  display: grid;
+  grid-template: auto auto;
+}
+
+.dialog-left {
+  float: left;
+  display: grid;
+  grid-template: auto auto;
+}
+
+.dialog-center {
+  float: center;
+  display: grid;
+  grid-template: auto auto;
+  justify-content: right;
+  padding-right: 10px;
+}
+
+button.Check {
+  background-color: #2ce019;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 2px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dialog-basket {
+  justify-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+}
+
+.need-image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  padding: 10px;
+  text-align: center;
+  z-index: 1;
+}
+
+.need-image {
+  width: 100%;
+  height: 100%;
+}
+
+.need-item {
+  display: inline-block;
+  margin: 0;
+}
+
+.need-info {
+  position: absolute;
+  top: 15%;
+  left: 0%;
+  color: black;
+  width: 100%;
+  font-size: 15px;
+  font-weight: bold;
+  place-items: center;
+}
+
+.need-info-step {
+  width: 50%;
+  text-align: center;
+}
+
+.need-info-mid {
+  width: 80%;
+}
+
+.need-count {
+  font-size: 0.9rem;
+}
+
+input {
+  width: 45%;
+  text-align: left;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+button.Delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  top: 5px;
+}
+
+img.Delete {
+  width: 24px;
+  height: 25px;
+}
+
+.invalid {
+  color: red;
+}

@@ -1,0 +1,125 @@
+@font-face {
+  font-family: BeeFont; /* set name */
+  src: url('/bee_font.ttf'); /* url of the font */
+}
+
+.need-item {
+  display: inline-block;
+  margin: 0;
+}
+
+.need-image-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  padding: 10px;
+  font-family: BeeFont;
+  text-align: center;
+  z-index: 1;
+}
+
+.need-image {
+  width: 100%;
+  height: 100%;
+}
+
+.need-info {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  width: 80%;
+  font-size: 1.5rem;
+  font-family: BeeFont;
+}
+
+.add-to-basket {
+  bottom: 5%;
+  left: 30%;
+  position: absolute;
+  font-family: BeeFont;
+  scale: 80%;
+}
+.needs-menu {
+  display: flexbox;
+  gap: 0px;
+  text-align: center;
+  font-family: BeeFont;
+}
+.search-bar {
+  padding-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.search_input {
+background: linear-gradient(
+    0deg,
+    rgba(217, 124, 11, 1) 1%,
+    rgba(255, 185, 99, 1) 29%,
+    rgba(217, 124, 11, 1) 88%,
+    rgba(255, 182, 64, 1) 100%
+  );  font-family: BeeFont;
+  width: 50%;
+  height: 10%;
+  font-size: 4rem;
+  border-radius: 5px;
+}
+
+.seach_button {
+background: linear-gradient(
+    0deg,
+    rgba(217, 124, 11, 1) 1%,
+    rgba(255, 185, 99, 1) 29%,
+    rgba(217, 124, 11, 1) 88%,
+    rgba(255, 182, 64, 1) 100%
+  );  font-family: BeeFont;
+  width: 20%;
+  height: 88px;
+  font-size: 3rem;
+  border-radius: 5px;
+}
+.seach_button:hover {
+  background-color: lightyellow;
+}
+.all_cupboard {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.admin {
+  position: relative;
+  z-index: 1;
+}
+
+#return-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+#return-box {
+  background: linear-gradient(
+    0deg,
+    rgba(217, 124, 11, 1) 1%,
+    rgba(255, 185, 99, 1) 29%,
+    rgba(217, 124, 11, 1) 88%,
+    rgba(255, 182, 64, 1) 100%
+  );
+  padding: 2em;
+  border-radius: 0.5em;
+}
+
+#return-box button {
+  padding: 1em;
+  font-size: 10pt;
+  background-color: orange;
+}
+
+#return-box h1 {
+  font-family: BeeFont;
+}

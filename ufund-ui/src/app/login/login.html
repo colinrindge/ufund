@@ -1,0 +1,24 @@
+<div class="maxbox">
+  <div class="full-login-box">
+    <div id="login-box">
+      <span id="login-span">
+        <h2>Login</h2>
+        <div class="login_boxs">
+          <input type="text" placeholder="Username" [(ngModel)]="username" name="username" />
+          <input type="password" placeholder="Password" [(ngModel)]="password" name="password" />
+          <button (click)="onLogin()">Login</button>
+        </div>
+        <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+        <p>No account? <button (click)="createAccount()">Create one here</button></p>
+        <p>Forgot Password? <button (click)="forgotPassword()">Recover Account</button></p>
+      </span>
+    </div>
+    <div id="login-bypass">
+      <div>
+        <h3>Just want to look around?</h3>
+        <button (click)="continueWithoutAccount()">Continue without account</button>
+      </div>
+    </div>
+</div>
+<div id="login-bypass">
+</div>

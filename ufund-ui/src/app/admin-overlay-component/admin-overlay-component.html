@@ -1,0 +1,4 @@
+<button class="Edit" (click)="openEditNeed()">Edit</button>
+<button class="Delete" (click)="deleteNeed()">Delete</button>
+<app-edit-modal-component *ngIf="isEditing" (closeEvent)="closeEditNeed()" [need]="need">
+</app-edit-modal-component>

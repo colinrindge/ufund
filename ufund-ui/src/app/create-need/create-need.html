@@ -1,0 +1,9 @@
+<div class="createNeed">
+  <button class="Create" (click)="openCreateMenu()">Create New Need</button>
+  <app-create-modal-component
+    *ngIf="isCreating"
+    [needs]="needs"
+    [need]="need"
+    (closeEvent)="closeCreateMenu()"
+  />
+</div>

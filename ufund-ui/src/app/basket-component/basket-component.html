@@ -1,0 +1,47 @@
+<dialog open>
+  <div class="dialog-left">
+    <div class="dialog-title">
+      <h2>My Basket</h2>
+    </div>
+    <button class="Check" (click)="checkOutBasket()">Check Out</button>
+  </div>
+  <div class="dialog-right">
+    <!-- <button class="hexagon" (click)="closeBasket()">X</button> -->
+  </div>
+  <div class="dialog-right">
+    <!-- <button class="Check" (click)="checkOutBasket()">Check Out</button> -->
+  </div>
+  <div class="dialog-center" [hidden]="!checkOutValidated">
+    <p class="invalid" [hidden]="!checkOutValidated">Remaining Needs are Invalid! (Overfunding)</p>
+  </div>
+  <div class="dialog-basket">
+    <div *ngIf="updateBasket()"></div>
+    <div *ngFor="let basketNeed of basket" class="need-item">
+      <div class="need-image-container">
+        <img src="/hexagonbee1.png" alt="Yellow exagon with a bee in the upper right corner and text inside the hexagon" class="need-image" />
+
+        <div class="need-info">
+          <div class="need-info-step">
+            <h3>{{ basketNeed.need.name }}</h3>
+            <p><strong>Total Recieved:</strong> #{{ basketNeed.need.quantity }}</p>
+            <p><strong>Total Needed:</strong> ${{ basketNeed.need.cost }}</p>
+            <p><strong>Type:</strong> {{ basketNeed.need.type }}</p>
+          
+            <p class="need-info-mid">{{ basketNeed.need.description }}</p>
+
+            <div class="need-count">
+              Count: 
+              <input oninput="if(this.value < 0) this.value = Math.abs(this.value);" 
+              type="number" [(ngModel)]="basketNeed.count" 
+              (change)="updateNeed(basketNeed, basketNeed.count)" 
+              min="1" step="1"/>
+              <button class="Delete" (click)="removeNeed(basketNeed)" title="Remove from basket">
+                <img src="/garbageCan.png" class="Delete" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>

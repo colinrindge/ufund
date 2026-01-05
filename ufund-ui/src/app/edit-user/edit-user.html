@@ -1,0 +1,14 @@
+<dialog open>
+  <h2 class="header-label">Edit User Information</h2>
+  <div>
+    <label for="name"> Username: </label>
+    <input id="name" type="text" [(ngModel)]="user.userName" [ngModelOptions]="{ updateOn: 'blur' }" />
+  </div>
+  <br />
+  <div>
+    <label for="password"> Password: </label>
+    <input id="password" type="password" [(ngModel)]="user.password" />
+  </div>
+  <br />
+  <button type="submit" (click)="onSubmit()" class="submit-button">Submit</button>
+</dialog>

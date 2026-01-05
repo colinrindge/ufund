@@ -1,0 +1,29 @@
+<dialog open>
+  <h2 class="header-label">Edit Need for {{ need.name }}</h2>
+  <div>
+    <label for="name"> Name: </label>
+    <input id="name" type="text" [(ngModel)]="need.name" [ngModelOptions]="{ updateOn: 'blur' }" />
+  </div>
+  <br />
+  <div>
+    <label for="cost"> Amount Requested: </label>
+    <input id="cost" type="number" min="0" [(ngModel)]="need.cost" />
+  </div>
+  <br />
+  <div>
+    <label for="quantity"> Amount Recieved: </label>
+    <input id="quantity" type="number" min="0" [(ngModel)]="need.quantity" />
+  </div>
+  <br />
+  <div>
+    <label for="type"> Type: </label>
+    <input id="type" type="text" [(ngModel)]="need.type" />
+  </div>
+  <br />
+  <div>
+    <label for="description"> Description: </label>
+    <input id="description" type="text" [(ngModel)]="need.description" />
+  </div>
+  <br />
+  <button type="submit" (click)="onSubmit()" class="submit-button">Submit</button>
+</dialog>

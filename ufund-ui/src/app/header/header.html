@@ -1,0 +1,52 @@
+<div class="header">
+  <div class="header-left">
+    <h1>
+      bee
+      <br />
+      funding
+    </h1>
+    <div class="basket" *ngIf="currentUser.userName != 'admin' && currentUser.userName != 'Guest'">
+      <button
+        class="pot"
+        id="basket"
+        (click)="openBasket()"
+        [hidden]="viewBasket"
+        title="Open your basket!"
+      >
+        <img src="/honeyPot01.png" class="honey-pot-1" />
+        <img src="/honeyPot02.png" class="honey-pot-2" />
+      </button>
+      <button
+        class="pot"
+        id="basket"
+        (click)="closeBasket()"
+        [hidden]="!viewBasket"
+        title="Close your basket!"
+      >
+        <img src="/honeyPot03.png" class="honey-pot-3" />
+      </button>
+    </div>
+  </div>
+  <div class="header-right" *ngIf="currentUser.userName != 'Guest'">
+    <div class="userbox">
+      <h2 style="margin: 0">
+        {{ currentUser.userName }}
+      </h2>
+      <a *ngIf="currentUser.userName != 'admin' && currentUser.userName != 'Guest'"> Helper </a>
+      
+    </div>
+    <button class="signout" (click)="onSignOutClick()">
+        {{ text }}
+      </button>
+      <button (click)="openEditUser()">Settings</button>
+    
+  </div>
+</div>
+<app-basket-component *ngIf="viewBasket" (closeEvent)="closeBasket()" [basket]="basket">
+</app-basket-component>
+<app-bee-icon *ngIf="currentUser.userName != 'Guest'" [currentUser]="currentUser"></app-bee-icon>
+
+<app-edit-user *ngIf="isEditing" [currentUser]="currentUser" (closeEvent)="closeEditUser()" (logOutEvent)="onSignOutClick()">
+</app-edit-user>
+<app-edit-admin *ngIf="isEditingAdmin" [currentUser]="currentUser" (closeEvent)="closeEditUser()" (logOutEvent)="onSignOutClick()">
+</app-edit-admin>

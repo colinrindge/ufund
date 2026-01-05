@@ -1,0 +1,18 @@
+<dialog open>
+  <h2 class="header-label">Restrict/Unrestrict Users</h2>
+  <br />
+  <div id="admin-list-user">
+    <div *ngFor="let user of users">
+      <b>{{ user.userName }}: </b>
+      <label for="user-restricted">Restricted:</label>
+      <input
+        name="user-restricted"
+        type="checkbox"
+        [checked]="user.restricted"
+        (change)="onSubmit(user.userName)"
+      />
+    </div>
+  </div>
+  <br />
+  <button type="submit" (click)="closeRestrict()" class="submit-button">Close</button>
+</dialog>
